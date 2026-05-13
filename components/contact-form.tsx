@@ -81,60 +81,7 @@ export function ContactForm({ profile, databaseConnected }: { profile: Profile; 
           </li>
         </ul>
       </div>
-      <form className="space-y-4" onSubmit={onSubmit}>
-        <div className="grid gap-4 sm:grid-cols-2">
-          <label className="block text-sm">
-            <span className="mb-1 block text-xs font-semibold uppercase tracking-wider text-zinc-500">Name</span>
-            <input
-              name="name"
-              required
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none ring-0 transition placeholder:text-zinc-600 focus:border-cyan-500/50 focus:bg-white/[0.07]"
-              placeholder="Your name"
-            />
-          </label>
-          <label className="block text-sm">
-            <span className="mb-1 block text-xs font-semibold uppercase tracking-wider text-zinc-500">Email</span>
-            <input
-              name="email"
-              type="email"
-              required
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-cyan-500/50 focus:bg-white/[0.07]"
-              placeholder="your.email@example.com"
-            />
-          </label>
-        </div>
-        <label className="block text-sm">
-          <span className="mb-1 block text-xs font-semibold uppercase tracking-wider text-zinc-500">Subject</span>
-          <input
-            name="subject"
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-cyan-500/50 focus:bg-white/[0.07]"
-            placeholder="Internship / project / collaboration"
-          />
-        </label>
-        <label className="block text-sm">
-          <span className="mb-1 block text-xs font-semibold uppercase tracking-wider text-zinc-500">Message</span>
-          <textarea
-            name="message"
-            required
-            rows={5}
-            className="w-full resize-y rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none focus:border-cyan-500/50 focus:bg-white/[0.07]"
-            placeholder="Share context, timelines, and how I can help…"
-          />
-        </label>
-        <div className="flex flex-wrap items-center gap-3">
-          <button
-            type="submit"
-            disabled={status === "loading"}
-            className="rounded-2xl bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 disabled:opacity-60"
-          >
-            {status === "loading" ? "Sending…" : "Send message"}
-          </button>
-          {status === "success" ? (
-            <span className="text-sm font-medium text-emerald-400">Received—thank you!</span>
-          ) : null}
-          {status === "error" ? <span className="text-sm font-medium text-rose-400">{errorMsg}</span> : null}
-        </div>
-      </form>
+      
     </div>
   );
 }
