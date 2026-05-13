@@ -76,7 +76,7 @@ export function ContactForm({ profile, databaseConnected }: { profile: Profile; 
             {databaseConnected ? (
               <span className="text-emerald-300">Ready to store inquiries</span>
             ) : (
-              <span className="text-amber-200">Configure MYSQL_* to enable saving</span>
+              <span className="text-amber-200"> MYSQL</span>
             )}
           </li>
         </ul>
