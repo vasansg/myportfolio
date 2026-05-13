@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #050508;
+  --surface: rgba(18, 18, 24, 0.72);
+  --border: rgba(255, 255, 255, 0.08);
+  --accent: #22d3ee;
+  --accent2: #a78bfa;
+  --muted: #a1a1aa;
+}
+
+@theme inline {
+  --font-sans: var(--font-outfit), system-ui, sans-serif;
+  --font-display: var(--font-syne), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: #fafafa;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.35);
+  color: #fff;
+}
+
+.mesh-bg {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(34, 211, 238, 0.22), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(167, 139, 250, 0.18), transparent),
+    radial-gradient(ellipse 50% 30% at 0% 20%, rgba(34, 211, 238, 0.12), transparent),
+    var(--bg);
+}
+
+.glass {
+  background: var(--surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+}
+
+/* Grain stays behind page content (was z-50 and could cover the main layer in some stacks). */
+.noise {
+  position: relative;
+  isolation: isolate;
+}
+
+.noise::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  opacity: 0.04;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
