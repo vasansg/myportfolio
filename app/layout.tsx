@@ -23,6 +23,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7095909811131647"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={`${outfit.variable} ${syne.variable} antialiased`}>{children}</body>
     </html>
   );
